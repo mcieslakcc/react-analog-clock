@@ -39,14 +39,14 @@ const SizeFactors = {
 };
 
 export function roundToSecondPlace(value) {
-    console.log(value)
+    // console.log(value)
     return +(Math.round(value + 'e+2')  + 'e-2');
 }
 
 export function calculateSize(factor, width) {
-    console.log('width', width)
-    console.log('factor', factor)
-    console.log('roundToSecondPlace(width * factor);', roundToSecondPlace(width * factor))
+    // console.log('width', width)
+    // console.log('factor', factor)
+    // console.log('roundToSecondPlace(width * factor);', roundToSecondPlace(width * factor))
     return roundToSecondPlace(width * factor);
 };
 
