@@ -46,7 +46,8 @@ export default class AnalogClock extends Component {
     }
 
     render() {
-        return <AnalogClockLayout {...this.state} styles={this.styles} />;
+        console.log('width', this.props.width)
+        return <AnalogClockLayout {...this.state} styles={this.styles} width={this.props.width} />;
     }
 }
 

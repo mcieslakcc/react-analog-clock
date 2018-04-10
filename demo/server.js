@@ -5,7 +5,7 @@ const config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
     publicPath: config.output.publicPath,
-}).listen(3000, 'localhost', err => {
+}).listen(3030, 'localhost', err => {
     if (err) {
         console.log(err);
     }

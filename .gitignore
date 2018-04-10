@@ -5,3 +5,5 @@ demo/dist
 dist
 lib
 es
+.idea
+package-lock.json
