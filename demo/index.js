@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AnalogClock, { Themes } from '../src/index';
 
-const WIDTH = 80;
+const WIDTH = 200;
 const GMTOFFSET= "-5.5";
 
 const analogClockTheme = {

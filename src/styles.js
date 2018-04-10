@@ -7,17 +7,26 @@ const AnalogBase = {
     height: s => s.width,
     position: 'relative',
     width: s => s.width,
+    overflow: 'hidden'
 };
 
+const calculateSize = (factor, { width }) => {
+    console.log('width', width)
+    console.log('factor', factor)
+    const size = Math.round(width * factor);
+    return +(Math.round(size + "e+2")  + "e-2");
+};
+
+// constcalculateSize(100, { width: 10 });
 const AnalogCenter = {
     background: s => s.theme.center,
     borderRadius: '100%',
-    height: s => s.width * 0.07,
+    height: calculateSize.bind(null, 0.07),
     left: '50%',
     position: 'absolute',
     top: '50%',
     transform: 'translateX(-50%) translateY(-50%)',
-    width: s => s.width * 0.07,
+    width: calculateSize.bind(null, 0.07),
 };
 
 const AnalogHand = {
@@ -25,61 +34,50 @@ const AnalogHand = {
     position: 'absolute',
     top: '50%',
     transformOrigin: '50% 100%',
-    borderRadius: '10px'
 };
 
 const AnalogSecondHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.seconds,
     height: s => Math.floor(s.width * 0.5),
     width: s => s.width * 0.01,
-    borderRadius: s => s.width * 0.02
+    borderRadius: s => s.width * 0.02,
+    zIndex: 1
 });
 
 const AnalogMinuteHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.minutes,
     height: s => Math.floor(s.width * 0.5),
     width: s => s.width * 0.02,
-    borderRadius: s => s.width * 0.03
-
+    borderRadius: s => s.width * 0.05
 });
 
 const AnalogHourHand = Object.assign({}, AnalogHand, {
     background: s => s.theme.hour,
-    height: s => Math.floor(s.width * 0.2),
+    height: s => Math.floor(s.width * 0.3),
     width: s => s.width * 0.04,
-    borderRadius: s => s.width * 0.05
+    borderRadius: s => s.width * 0.1
 });
 
 const AnalogSmallTick = {
     background: s => s.theme.tick,
-    height: s =>  Math.ceil(s.width / 50),
-    // left: '50%',
+    height: s =>  s.width * 0.075,
     position: 'absolute',
-    // top: s => Math.ceil(s.width / 50),
-    // transformOrigin: s => `0 ${Math.ceil(s.width / 2)}px`,
-    width: s => Math.ceil(s.width / 100),
-    borderRadius: s =>  Math.ceil(s.width / 400)
+    width: s => s.width * 0.01,
+    borderRadius: s => s.width * 0.02
 };
 
 const AnalogLargeTick = {
     background: s => s.theme.tick,
-    height: s =>  Math.ceil(s.width / 25),
-    // left: s => Math.ceil(s.width / 2) + 2,
+    height: s =>  s.width * 0.15,
     position: 'absolute',
-    // top: s => Math.ceil(s.width / 25),
-    // transformOrigin: s => `0 ${Math.ceil(s.width / 2)}px`,
-    width: s =>  Math.ceil(s.width / 50),
-    borderRadius: s =>  Math.ceil(s.width / 200)
+    width: s => s.width * 0.02,
+    borderRadius: s => s.width * 0.04
 };
 
-const digits = {
+const digit = {
     position: 'absolute',
     color: s => s.theme.hour,
-    // width: s => Math.floor(s.width * 0.85),
-    // height: s => Math.floor(s.width * 0.85),
     transform: 'translate(-50%, -50%)',
-    // left: s => Math.floor(s.width / 2),
-    // top: s => Math.floor(s.width / 2)
     fontSize: s => s.width * 0.15
 };
 
@@ -89,7 +87,7 @@ export default {
     center: AnalogCenter,
     second: AnalogSecondHand,
     minute: AnalogMinuteHand,
-    digits: digits,
+    digit: digit,
     hour: AnalogHourHand,
     smallTick: AnalogSmallTick,
     largeTick: AnalogLargeTick,

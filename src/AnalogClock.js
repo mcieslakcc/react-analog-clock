@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import AnalogClockLayout from './AnalogClockLayout';
 import Styles from './styles';
-import { cssTransform, updateTime } from './util';
+import { cssTransform, updateTime, calculateCommonSizes } from './util';
 import { dark } from './themes';
 
 export default class AnalogClock extends Component {
@@ -17,7 +17,8 @@ export default class AnalogClock extends Component {
             minutes: date[1],
             hour: date[0],
         };
-
+        const result = calculateCommonSizes(props.width);
+        console.log(result);
         this.styles = cssTransform(Styles, props);
     }
 
@@ -46,7 +47,6 @@ export default class AnalogClock extends Component {
     }
 
     render() {
-        console.log('width', this.props.width)
         return <AnalogClockLayout {...this.state} styles={this.styles} width={this.props.width} />;
     }
 }
