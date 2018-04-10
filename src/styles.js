@@ -74,12 +74,13 @@ const AnalogLargeTick = {
 
 const digits = {
     position: 'absolute',
-    fill: s => s.theme.hour,
-    width: s => Math.floor(s.width * 0.85),
-    height: s => Math.floor(s.width * 0.85),
+    color: s => s.theme.hour,
+    // width: s => Math.floor(s.width * 0.85),
+    // height: s => Math.floor(s.width * 0.85),
     transform: 'translate(-50%, -50%)',
-    left: s => Math.floor(s.width / 2),
-    top: s => Math.floor(s.width / 2)
+    // left: s => Math.floor(s.width / 2),
+    // top: s => Math.floor(s.width / 2)
+    fontSize: s => s.width * 0.15
 };
 
 
