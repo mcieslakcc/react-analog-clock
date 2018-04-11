@@ -1,5 +1,14 @@
 # \<AnalogClock /\>
 
+Forked from [zackargyle/react-analog-clock](https://github.com/zackargyle/react-analog-clock)
+
+###New features and fixes
+1. Display digits on clock face(configure by props)
+2. Add border radius to clock hands((configure by props)
+3. Resize all clock components (hands, digits, notches) based on width property
+4. Move hour hand according to current minutes(fix)
+5. Change a way of rendering notches to be always on proper position(fix)
+
 AnalogClock is a themable clock component. It provides an easy way of adding a clock to your application. The clock is fully responsive based on the `width` prop you pass in.
 
 ```
@@ -18,11 +27,13 @@ ReactDOM.render(<AnalogClock theme={Themes.dark} />, element);
 ```
 
 ### Props
-prop    | default
-------- | -------
+prop    | default | description
+------- | ------- | ----------
 `width` | 400px
 `theme` | Themes.dark
 `gmtOffset` (optional)| offset of `new Date()` _(e.g. '-5.5')_
+`showDigits` | true | shows digits on clock face
+`borderRadius` | true | adds borders radius to clock hand and notches
 
 ### Themes
 Theme      | Description
