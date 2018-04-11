@@ -20,8 +20,8 @@ export default class AnalogClock extends Component {
 
     render() {
         return (<div style={this.styles.base}>
-            <AnalogClockLayout gmtOffset={this.props.gmtOffset} styles={this.styles} />;
-            <ClockFace styles={this.styles} width={this.props.width} showDigits />
+            <AnalogClockLayout gmtOffset={this.props.gmtOffset} styles={this.styles} borderRadius={this.props.borderRadius} />;
+            <ClockFace styles={this.styles} width={this.props.width} showDigits={this.props.showDigits} borderRadius={this.props.borderRadius} />
         </div>);
     }
 }
@@ -38,9 +38,12 @@ AnalogClock.propTypes = {
     }),
     width: PropTypes.number,
     gmtOffset: PropTypes.string,
+    showDigits: PropTypes.bool,
 };
 
 AnalogClock.defaultProps = {
     theme: dark,
     width: 400,
+    showDigits: true,
+    borderRadius: true
 };

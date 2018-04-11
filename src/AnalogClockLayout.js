@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import { updateTime } from './util';
 import React, { Component } from 'react';
-
-const Tick = 6;
-const DigitSpace = 30;
+import { Tick, DigitSpace } from '../lib/timeConstants';
 
 export default class AnalogClockLayout extends Component {
 

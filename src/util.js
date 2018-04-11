@@ -29,29 +29,6 @@ export function updateTime({ seconds, minutes, hour }) {
     return { seconds, minutes, hour };
 }
 
-const SizeFactors = {
-    center: 0.07,
-    longHandHeight: 0.5,
-    shortHandHeight: 0.3,
-    longHandWidth: 0.02,
-    shortHandWidth: 0.01,
-    longHandRadius: 0.02
-};
-
 export function roundToSecondPlace(value) {
-    // console.log(value)
     return +(Math.round(value + 'e+2')  + 'e-2');
 }
-
-export function calculateSize(factor, width) {
-    // console.log('width', width)
-    // console.log('factor', factor)
-    // console.log('roundToSecondPlace(width * factor);', roundToSecondPlace(width * factor))
-    return roundToSecondPlace(width * factor);
-};
-
-export function calculateCommonSizes(width) {
-    return Object.keys(SizeFactors).map((key) => {
-        return calculateSize(SizeFactors[key], width);
-    });
-} 
