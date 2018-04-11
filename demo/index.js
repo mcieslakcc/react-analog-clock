@@ -15,8 +15,6 @@ const analogClockTheme = {
     tick: 'white'
 };
 
-
-
 const Component = (
     <div style={ {background: 'black'}}>
         <span><AnalogClock width={WIDTH} theme={analogClockTheme} showDigits={true} /></span>
@@ -25,7 +23,6 @@ const Component = (
         <span><AnalogClock width={WIDTH} theme={Themes.lime} /></span>
         <span><AnalogClock width={WIDTH} theme={Themes.sherbert} /></span>
         <span><AnalogClock width={WIDTH} theme={Themes.navy} /></span>
-        {/**/}
         <h2>With GMT Offset -5.5:</h2>
         <span><AnalogClock width={WIDTH} theme={Themes.light} gmtOffset={GMTOFFSET} /></span>
     </div>
