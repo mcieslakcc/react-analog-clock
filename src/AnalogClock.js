@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import AnalogClockLayout from './AnalogClockLayout';
 import ClockFace from './ClockFace';
 import Styles from './styles';
@@ -39,6 +38,7 @@ AnalogClock.propTypes = {
     width: PropTypes.number,
     gmtOffset: PropTypes.string,
     showDigits: PropTypes.bool,
+    borderRadius: PropTypes.bool
 };
 
 AnalogClock.defaultProps = {

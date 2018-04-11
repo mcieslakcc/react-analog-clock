@@ -29,7 +29,6 @@ const AnalogBase = {
     width: s => s.width,
 };
 
-
 const AnalogCenter = {
     background: s => s.theme.center,
     borderRadius: '100%',
@@ -40,7 +39,6 @@ const AnalogCenter = {
     top: '50%',
     transform: 'translateX(-50%) translateY(-50%)',
 };
-
 
 const AnalogHand = {
     left: '50%',
