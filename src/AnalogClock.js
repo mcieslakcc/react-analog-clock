@@ -19,7 +19,7 @@ export default class AnalogClock extends Component {
 
     render() {
         return (<div style={this.styles.base}>
-            <AnalogClockLayout gmtOffset={this.props.gmtOffset} styles={this.styles} borderRadius={this.props.borderRadius} />;
+            <AnalogClockLayout gmtOffset={this.props.gmtOffset} styles={this.styles} borderRadius={this.props.borderRadius} />
             <ClockFace styles={this.styles} width={this.props.width} showDigits={this.props.showDigits} borderRadius={this.props.borderRadius} />
         </div>);
     }

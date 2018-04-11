@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SecondsInMinute, DigitsCount, DigitSpace, Tick } from './timeConstants';
-import { roundToSecondPlace } from './util';
 
 const digitsFactor = 0.72;
 const LargeNotchFactor = 0.98;
@@ -11,11 +10,11 @@ const toRadius = (degree) => {
 };
 
 const getXPoint = (shift, radius, degree) => {
-    return roundToSecondPlace(shift + radius * Math.sin(toRadius(degree)));
+    return Math.floor(shift + radius * Math.sin(toRadius(degree)));
 };
 
 const getYPoint = (shift, radius, degree) => {
-    return roundToSecondPlace(shift - radius * Math.cos(toRadius(degree)));
+    return Math.floor(shift - radius * Math.cos(toRadius(degree)));
 };
 
 const renderNotches = ({ smallTick, largeTick }, width) => {
@@ -24,7 +23,7 @@ const renderNotches = ({ smallTick, largeTick }, width) => {
     let radius = shift;
     let tickType = smallTick;
     for (let i = 0; i < SecondsInMinute; i++) {
-        if (i % (SecondsInMinute / DigitsCount) === 0)  {
+        if (i % (SecondsInMinute / DigitsCount) === 0) {
             radius = radius * LargeNotchFactor;
             tickType = largeTick;
         }

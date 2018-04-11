@@ -1,8 +1,6 @@
-import { roundToSecondPlace } from './util';
-
 const SizeFactors = {
     center: 0.07,
-    longHandHeight: 0.5,
+    longHandHeight: 0.51,
     shortHandHeight: 0.3,
     longHandWidth: 0.02,
     smallTickHeight: 0.04,
@@ -15,7 +13,7 @@ const getBorderRadius = ({ borderRadius }) => {
 };
 
 const calculateSize = (factor, { width }) => {
-    return roundToSecondPlace(width * factor);
+    return Math.floor(width * factor);
 };
 
 const AnalogBase = {
@@ -78,7 +76,7 @@ const AnalogSmallTick = {
 
 const AnalogLargeTick = {
     background: s => s.theme.tick,
-    height:calculateSize.bind(null, SizeFactors.longTickHeight),
+    height: calculateSize.bind(null, SizeFactors.longTickHeight),
     width: calculateSize.bind(null, SizeFactors.longHandWidth),
     position: 'absolute',
     borderRadius: getBorderRadius
@@ -87,7 +85,7 @@ const AnalogLargeTick = {
 const digit = {
     position: 'absolute',
     color: s => s.theme.hour,
-    transform: 'translate(-45%, -50%)',
+    transform: 'translate(-45%, -45%)',
     fontSize: calculateSize.bind(null, SizeFactors.font)
 };
 

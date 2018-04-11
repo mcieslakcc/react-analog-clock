@@ -11,7 +11,10 @@
         "max-len": 0,
         "func-names": 0,
         "prefer-template": 0,
-        "padded-blocks": 0
+        "padded-blocks": 0,
+        "comma-dangle": [
+            0
+        ]
     },
     "globals": {
         "beforeEach": true,

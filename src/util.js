@@ -28,7 +28,3 @@ export function updateTime({ seconds, minutes, hour }) {
     }
     return { seconds, minutes, hour };
 }
-
-export function roundToSecondPlace(value) {
-    return +(Math.round(value + 'e+2')  + 'e-2');
-}
