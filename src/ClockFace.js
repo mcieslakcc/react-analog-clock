@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SecondsInMinute, DigitsCount, DigitSpace, Tick } from '../lib/timeConstants';
+import { SecondsInMinute, DigitsCount, DigitSpace, Tick } from './timeConstants';
 import { roundToSecondPlace } from './util';
 
 const digitsFactor = 0.72;
